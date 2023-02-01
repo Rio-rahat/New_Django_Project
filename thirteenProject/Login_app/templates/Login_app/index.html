@@ -1,0 +1,13 @@
+{% extends 'Login_app/base.html' %}
+{% block body %}
+<h1>Index Page: </h1>
+{% if user.is_authenticated %}
+<p>Hi, {{user_basic_info.username}}</p>
+<p>Your email is, {{user_basic_info.email}}</p>
+<p>Your Facebook Profile Link: <a href="{{user_more_info.facebook_id}}" target=blank>Facebook Profile</a></p>
+<p>Your Profile Pic:</p>
+<img src="/media/{{user_more_info.profile_pic}}" width=200px alt="">
+{% else %}
+<h1>Please Login First!!!</h1>
+{% endif %}
+{% endblock body %}
